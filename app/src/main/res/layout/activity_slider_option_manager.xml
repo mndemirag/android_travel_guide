@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SliderOptionsManagerActivity">
+
+    <!-- Include custom element_toolbar on top of the screen -->
+    <include
+        android:id="@+id/sliderOptionScreenToolbar"
+        layout="@layout/element_toolbar" />
+
+    <FrameLayout
+        android:id="@+id/fragmentHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/sliderOptionScreenToolbar"
+        android:layout_above="@+id/sliderOptionScreenBottombar"
+        android:scrollbars="vertical" >
+    </FrameLayout>
+
+    <!-- Include custom element bottombar at bottom of the screen -->
+    <include
+        android:id="@+id/sliderOptionScreenBottombar"
+        layout="@layout/element_bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

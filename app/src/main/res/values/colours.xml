@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#00BCD4</color>
+    <color name="primary_dark">#121212</color>
+    <color name="accent">#00BCD4</color>
+    <color name="primary_text">#212121</color>
+    <color name="toolbar_text">#212121</color>
+    <color name="gradient_center">#ef9a9a</color>
+    <color name="textlink_color">#283593</color>
+    <color name="cust_green_A400">#00BCD4</color>
+    <color name="cust_green_A200">#69F0AE</color>
+    <color name="cust_green_A100">#B9F6CA</color>
+    <color name="cust_purple_A700">#D500F9</color>
+    <color name="cust_purple_A200">#EA80FC</color>
+    <color name="cust_purple_A400">#00838F</color>
+
+    <!-- #00E676  <color name="accent"></color> -->
+</resources>

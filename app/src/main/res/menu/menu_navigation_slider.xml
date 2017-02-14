@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/history"
+            android:checked="false"
+            android:icon="@drawable/ic_past_trips"
+            android:title="@string/history_menu_option" />
+
+        <item
+            android:id="@+id/preferences"
+            android:checked="false"
+            android:icon="@drawable/ic_preferences"
+            android:title="@string/preferences_menu_option" />
+
+        <item
+            android:id="@+id/connect"
+            android:checked="false"
+            android:icon="@drawable/ic_connect"
+            android:title="@string/connect_menu_option" />
+
+        <item
+            android:id="@+id/about_us"
+            android:checked="false"
+            android:icon="@drawable/ic_about_us"
+            android:title="@string/about_us_menu_option" />
+
+
+        <item
+            android:id="@+id/logout"
+            android:checked="false"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/logout_menu_option" />
+
+    </group>
+</menu>

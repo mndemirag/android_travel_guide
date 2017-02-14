@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layMainHomeScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeScreenActivity"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true" >
+
+    <!-- Vertical Scroll bar for the home screen -->
+    <ScrollView
+        android:id="@+id/homeVerticalScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="false" >
+
+        <!-- Layout portion that holds the main home screen content -->
+        <LinearLayout
+            android:id="@+id/mainContentHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" >
+
+            <!-- Layout that contains the options for round trip or single trip -->
+            <RadioGroup
+                android:id="@+id/grpTripType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="3dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:paddingBottom="3dp"
+                android:onClick="onTripTypeChanged" >
+
+                <RadioButton
+                    android:id="@+id/rbRoundTrip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_round_trip"
+                    android:drawablePadding="2dp"
+                    android:hint="@string/strRoundTripHint"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+                <RadioButton
+                    android:id="@+id/rbAtoBTrip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_single_trip"
+                    android:drawablePadding="2dp"
+                    android:hint="@string/strP2PHint"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+            </RadioGroup>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                style="@style/Base.Widget.AppCompat.ButtonBar" >
+
+                <TextView
+                    android:id="@+id/tvCommuteModeLabel"
+                    android:text="@string/strCommuteModeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+                <Spinner
+                    android:id="@+id/commuteModeDropdownList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="10dp"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/tvCommuteModeLabel"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+            <!-- Layout that holds the starting point and a Places to visit options -->
+            <LinearLayout
+                android:id="@+id/choosePlacesPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lblStrDeparturePoint"
+                    android:id="@+id/lblDeparturePoint"
+                    android:singleLine="true"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    android:gravity="left"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tfDeparturePoint"
+                    android:gravity="left"
+                    android:hint="@string/strChooseStartingPointHint"
+                    android:inputType="textAutoComplete|textAutoCorrect|text"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="50dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp" />
+
+                <RelativeLayout
+                    android:id="@+id/places2VisitButtonLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lblPlacesToVisit"
+                        android:id="@+id/lblPlacesToVisit"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
+                        android:layout_alignBottom="@+id/btnAddPlaceToVisit"
+                        android:layout_alignTop="@+id/btnAddPlaceToVisit"
+                        android:layout_alignParentStart="true"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+                    <ImageButton
+                        android:id="@+id/btnAddPlaceToVisit"
+                        android:text="@string/lblPlusButton"
+                        android:contentDescription="@string/lblDescAddLocation"
+                        android:src="@drawable/ic_plus"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="9dp"
+                        android:background="@drawable/roundedbutton"
+                        style="?android:attr/buttonStyleSmall"
+                        android:onClick="addLocation"
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/tfReqDestination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/lblHintEndPoint"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="50dp" />
+
+            </LinearLayout>
+
+            <!-- Layout that holds the newly added intermediate locations -->
+            <LinearLayout
+                android:id="@+id/addedLocationsContainerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical" >
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Layout that holds the two buttons at the bottom of the screen -->
+    <RelativeLayout
+        android:id="@+id/homeScreenBottomBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/primary"
+        style="@style/Base.Widget.AppCompat.ButtonBar" >
+
+        <Button
+            android:id="@+id/btnReset"
+            android:text="@string/lblClear"
+            android:padding="5dp"
+            android:onClick="resetFields"
+            android:textSize="18sp"
+            android:textColor="@color/primary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentStart="true"
+            style="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+        <Button
+            android:id="@+id/btnProceed"
+            android:text="@string/lblGo"
+            android:padding="5dp"
+            android:onClick="searchRoute"
+            android:textSize="18sp"
+            android:textColor="@color/primary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            style="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

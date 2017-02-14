@@ -1,0 +1,201 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginscreenDrawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".LoginScreenActivity" >
+
+    <RelativeLayout
+        android:id="@+id/loginContainerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Include custom element_toolbar on top of the screen -->
+        <include
+            android:id="@+id/loginScreenToolbar"
+            layout="@layout/element_toolbar" />
+
+        <include
+            android:id="@+id/loginScreenBottomBar"
+            layout="@layout/element_bottombar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/loginScreenToolbar"
+            android:layout_above="@+id/loginScreenBottomBar"
+            android:scrollbars="vertical" >
+
+            <ImageView
+                android:id="@+id/loginImgView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/user_login_banner"
+                android:contentDescription="@string/strLogin"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true" />
+
+            <!-- Email ID Text Field -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/loginEmailTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/loginImgView" >
+
+                <EditText android:id="@+id/tfLoginEmailID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/strHintEmailID" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Password Text Field -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/loginPassTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/loginEmailTextInputLayout" >
+
+                <EditText android:id="@+id/tfLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:hint="@string/strHintPassword" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <RelativeLayout
+                android:id="@+id/loginOptionsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingBottom="5dp"
+                android:layout_below="@id/loginPassTextInputLayout" >
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/cbKeepMeSignedIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strAlwaysLogin"
+                android:textSize="15sp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/linkForgotPassword" />
+
+            <!-- Forgot Password Text Link -->
+            <TextView
+                android:id="@+id/linkForgotPassword"
+                android:text="@string/strLinkForgotPassword"
+                android:textSize="15sp"
+                android:paddingLeft="2dp"
+                android:paddingRight="8dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:onClick="displayForgotPasswordDialog"
+                android:textColor="@color/textlink_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+
+            <!-- Login Button -->
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnLogin"
+                android:text="@string/strLogin"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:onClick="login"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/loginOptionsLayout" />
+
+            <!-- New User Registration Text Link -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_below="@+id/btnLogin"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true" >
+
+                <TextView
+                    android:id="@+id/userRegistrationLabel"
+                    android:text="@string/strSignupText"
+                    android:textSize="18sp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="1dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="2dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="12dp"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/newUserRegistrationLink"
+                    android:text="@string/linkNewUserRegistration"
+                    android:textSize="18sp"
+                    android:textColor="@color/textlink_color"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="12dp"
+                    android:gravity="center"
+                    android:onClick="displayRegisterForm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>

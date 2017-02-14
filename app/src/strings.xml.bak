@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">UTurn</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="strSignupText"> No account yet?</string>
+    <string name="linkNewUserRegistration">Register here </string>
+    <string name="strHintName">Name</string>
+    <string name="strHintEmailID">E-mail ID</string>
+    <string name="strHintPassword">Password</string>
+    <string name="strHintReenterPassword">Confirm Password</string>
+    <string name="lblOR">OR</string>
+    <string name="strLogin">Login</string>
+    <string name="strRegister">Create Account</string>
+    <string name="strExistingUser">Existing User</string>
+    <string name="strAlwaysLogin">Auto Logon</string>
+    <string name="strForgotPassword">Forgot Password</string>
+    <string name="resetPasswordLabel">Reset your Password</string>
+    <string name="strSendButtonLabel">Send</string>
+
+    <!-- Strings related to the Navigation Slider -->
+    <string name="lblProfilePicture">Profile Picture</string>
+    <string name="home_menu_option">Home</string>
+    <string name="history_menu_option">Past Trips</string>
+    <string name="preferences_menu_option">Preferences</string>
+    <string name="connect_menu_option">Connect</string>
+    <string name="about_us_menu_option">About Us</string>
+    <string name="logout_menu_option">Sign Out</string>
+    <string name="slider_open">Opens navigation slider</string>
+    <string name="slider_close">Closes navigation slider</string>
+    <string name="KEY_USER_DISP_NAME">"user_display_name"</string>
+    <string name="KEY_CLEAR_HISTORY">clear_history</string>
+    <string name="KEY_APP_UPDATES">application_updates</string>
+
+    <!-- Strings related to Home screen Main content -->
+    <string name="action_example">Example action</string>
+    <string name="lblStrDeparturePoint">Point of Departure</string>
+    <string name="strRoundTripHint">Round Trip</string>
+    <string name="strP2PHint">Straight Trip</string>
+    <string name="lblPlacesToVisit">Places to Visit</string>
+    <string name="lblPlusButton">+</string>
+    <string name="lblMinusButton">-</string>
+    <string name="strChooseStartingPointHint">Choose starting point</string>
+    <string name="lblHintLocation">Location</string>
+    <string name="lblHintEndPoint">Location/Finish Point</string>
+    <string name="lblDescRemoveLocation">Remove Location</string>
+    <string name="lblDescAddLocation">Add Location</string>
+    <string name="lblClear">Clear</string>
+    <string name="lblGo">Go</string>
+    <string name="strCommuteModeLabel">Commute Mode</string>
+    <string-array name="arrCommuteOptions">
+        <item>Walking</item>
+        <item>Biking</item>
+        <item>Driving</item>
+        <item>Public Transit</item>
+    </string-array>
+
+    <!-- Strings related to the Map or Navigation screen -->
+    <string name="strSaveRouteLabel">Save Route</string>
+    <string name="strDescByWalk">By Walk</string>
+    <string name="strDescByPublicTransport">By Public Transport</string>
+    <string name="strDescByCar">By Car</string>
+    <string name="strDescByBike">By Bike</string>
+    <string name="strLinkForgotPassword">Forgot Password</string>
+    <string name="lblDescNewUserRegistration">New User Registration</string>
+    <string name="strHintRouteName">Unique Route Name</string>
+    <string name="saveButtonLabel">Save</string>
+
+    <!-- Strings related to options in the slider menu -->
+    <string name="strNameLabel">Display Name </string>
+    <string name="strPassLabel">Password </string>
+    <string name="strAppUpdates">Application Updates </string>
+    <string name="strClearHistory">Clear History </string>
+    <string-array name="arrClearOptions">
+        <item>Older than 3 months</item>
+        <item>Older than 6 months</item>
+        <item>Older than an year</item>
+        <item>Clear All</item>
+    </string-array>
+
+    <string name="AboutusQuote"> \n   \"Man cannot discover new oceans unless he has the
+                courage to lose sight of the shore\" - Andre Gide \n\n</string>
+
+    <string name="AboutusDescription"> Travelling is a way of experiencing the beauty of various
+cultures, traditions and scenic natural attractions around the world.\n\n
+Our application was designed solely to help travellers trace an efficient route
+covering maximum possible places in available time. \n \n
+We at UTurn love to here from you for constant improvement of our application.\n
+Write us @ \n abcde.uturn@gmail.com \n\n\t HAPPY TRAVELLING \n </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

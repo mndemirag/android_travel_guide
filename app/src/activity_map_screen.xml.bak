@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapScreenActivity">
+
+    <!-- Layout that contains the map fragment -->
+    <RelativeLayout
+        android:id="@+id/mapContainerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" >
+
+        <fragment
+            android:id="@+id/routeMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.google.android.gms.maps.SupportMapFragment" >
+        </fragment>
+
+        <TextView
+            android:id="@+id/polylineInfo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:maxLines="5"
+            android:scrollbars="vertical"
+            android:textColor="#FFF"
+            android:background="#A00000FF"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/streetviewFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="30"
+        android:layout_below="@+id/mapContainerLayout"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        class="com.google.android.gms.maps.SupportStreetViewPanoramaFragment"/>
+
+    <!-- Layout that holds the two buttons at the bottom of the screen -->
+    <LinearLayout
+        android:id="@+id/buttonBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/primary"
+        style="@style/Base.Widget.AppCompat.ButtonBar" >
+
+        <ImageButton
+            android:id="@+id/btnByWalk"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="traceRouteByMode"
+            android:src="@drawable/ic_maps_directions_walk"
+            android:contentDescription="@string/strDescByWalk"
+            style="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+        <ImageButton
+            android:id="@+id/btnByPublicTransport"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="traceRouteByMode"
+            android:src="@drawable/ic_maps_directions_bus"
+            android:contentDescription="@string/strDescByPublicTransport"
+            style="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+        <ImageButton
+            android:id="@+id/btnByCar"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="traceRouteByMode"
+            android:src="@drawable/ic_maps_directions_car"
+            android:contentDescription="@string/strDescByCar"
+            style="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+        <ImageButton
+            android:id="@+id/btnByBike"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="traceRouteByMode"
+            android:src="@drawable/ic_maps_directions_bike"
+            android:contentDescription="@string/strDescByBike"
+            style="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+    </LinearLayout>
+
+</RelativeLayout>
